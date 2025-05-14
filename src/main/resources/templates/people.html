@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body style="background-color: #4607ff24">
+    <h1 th:text="${Question1.question}"/>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Number</th>
+                <th scope="col">Answer</th>
+            </tr>
+        </thead>
+        <tr th:each="choice, index: ${Question1.choices}">
+            <td th:text="${index.count}"/>
+            <td th:text="${choice}"/>
+        </tr>
+    </table>
+</body>
+</html>
