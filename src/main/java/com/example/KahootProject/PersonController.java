@@ -10,7 +10,16 @@ public class PersonController {
     @GetMapping
     String getPeople(Model model) {
         Game g = new Game();
-        model.addAttribute("Question1", g.getQuestionSet().get(0));
+        /*
+        for(int i = 0; i < 4; i++) {
+            model.addAttribute("question" + (i + 1), g.getQuestionSet().get(i));
+        }
+
+         */
+
+
+        model.addAttribute("question1", g.getQuestionSet().get((int)(Math.random() * 3)));
+
         return "people";
     }
 }

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body style="background-color: #4607ff24">
-    <h1 th:text="${Question1.question}"/>
+    <h1 th:text="${question1.question}"/>
     <table class="table">
         <thead>
             <tr>
@@ -14,10 +14,14 @@
                 <th scope="col">Answer</th>
             </tr>
         </thead>
-        <tr th:each="choice, index: ${Question1.choices}">
+        <tr th:each="choice, index: ${question1.choices}">
             <td th:text="${index.count}"/>
             <td th:text="${choice}"/>
         </tr>
     </table>
+    <svg width="100vw" height="100vh" id="divider">
+        <line id="horizontalDivider" x1="0%" y1="50%" x2="100%" y2="50%" stroke="black" stroke-width="5" />
+        <line id="verticalDivider" x1="50%" y1="0%" x2="50%" y2="100%" stroke="blue" stroke-width="5" />
+    </svg>
 </body>
 </html>
