@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class DataBaseSalaries
 {
-    // Class to hold player name and salary together
     public static class PlayerSalary
     {
         public String name;
