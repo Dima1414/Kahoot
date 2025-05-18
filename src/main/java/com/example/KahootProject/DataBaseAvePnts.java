@@ -35,6 +35,7 @@ public class DataBaseAvePnts
 
             for (int i = 0; i < rows.size(); i++)
             {
+
                 Element row = rows.get(i);
                 Elements cols = row.select("td");
 
@@ -42,6 +43,11 @@ public class DataBaseAvePnts
                 {
                     String name = cols.get(1).text();
                     String avgPointsStr = cols.get(13).text();
+
+                    if (name.equals("PLAYER") || avgPointsStr.equals("PTS"))
+                    {
+                        continue;
+                    }
 
                     try
                     {
