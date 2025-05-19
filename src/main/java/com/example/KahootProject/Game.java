@@ -9,16 +9,16 @@ public class Game {
     private ArrayList<Question> questionSet;
     public Game()  {
         questionSet = new ArrayList<Question>();
-        String q = "Who has the highest net worth?";
+        String q = "Who has the highest salary?";
         String[] a = {"Shaquille O'neal", "Lebron James", "Stephen Curry", "Larry Bird"};
         questionSet.add(new Question(q, a, "Lebron James"));
         q = "Who is the tallest?";
         a = new String[]{"Michael Jordan", "Jayson Tatum", "Luka Doncic", "Draymond Green"};
         questionSet.add(new Question(q, a, "Jayson Tatum"));
-        q = "Who is the tallest?";
+        q = "Who scored the most points in a game?";
         a = new String[]{"Stephen Curry", "Wilt Chamberlain", "Luka Doncic", "Lebron James"};
         questionSet.add(new Question(q, a, "Wilt Chamberlain"));
-        Collections.shuffle(questionSet, new Random());
+        // Collections.shuffle(questionSet, new Random());
     }
     public void start() {
         Scanner scan = new Scanner(System.in);
