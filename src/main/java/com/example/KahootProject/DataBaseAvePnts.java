@@ -22,6 +22,21 @@ public class DataBaseAvePnts
         playerStatsList = new ArrayList<DataBaseAvePnts>();
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+    public double getAvgPoints()
+    {
+        return avgPoints;
+    }
+
+    public ArrayList<DataBaseAvePnts> getAvePointsList()
+    {
+        return playerStatsList;
+    }
+
     // Method to load player stats
     public static void loadPlayerStats()
     {

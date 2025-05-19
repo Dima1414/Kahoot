@@ -21,6 +21,20 @@ public class DataBaseNetWorth
         netWorthList = new ArrayList<DataBaseNetWorth>();
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getNetWorth()
+    {
+        return netWorth;
+    }
+
+    public ArrayList<DataBaseNetWorth> getNetWorthList()
+    {
+        return netWorthList;
+    }
 
 
     public static void loadNetWorths()

@@ -21,6 +21,21 @@ import java.util.ArrayList;
             pointsList = new ArrayList<DataBaseHghstPnts>();
         }
 
+        public String getName()
+        {
+            return name;
+        }
+
+        public String getHighestPoints()
+        {
+            return points;
+        }
+
+        public ArrayList<DataBaseHghstPnts> getHghstPnts()
+        {
+            return pointsList;
+        }
+
         public static void loadPoints()
         {
             String url = "https://www.landofbasketball.com/year_by_year_stats/2024_2025_most_points_rs.htm";

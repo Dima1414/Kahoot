@@ -21,6 +21,21 @@ public class DataBaseSalaries
         salaries = new ArrayList<DataBaseSalaries>();
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getSalary()
+    {
+        return salary;
+    }
+
+    public ArrayList<DataBaseSalaries> getSalaries()
+    {
+        return salaries;
+    }
+
     public static void loadSalaries()
     {
         String url = "https://www.espn.com/nba/salaries/_/seasontype/3";
