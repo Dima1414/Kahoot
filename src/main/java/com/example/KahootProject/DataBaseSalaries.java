@@ -12,14 +12,14 @@ public class DataBaseSalaries
 {
     private String name;
     private String salary;
+    public static ArrayList<DataBaseSalaries> salaries;
 
     public DataBaseSalaries(String name, String salary)
     {
         this.name = name;
         this.salary = salary;
+        salaries = new ArrayList<DataBaseSalaries>();
     }
-
-    public static ArrayList<DataBaseSalaries> salaries = new ArrayList<>();
 
     public static void loadSalaries()
     {

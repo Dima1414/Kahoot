@@ -10,16 +10,18 @@ import java.util.ArrayList;
 
 public class DataBaseNetWorth
 {
-    public String name;
-    public String netWorth;
+    private String name;
+    private String netWorth;
+    public static ArrayList<DataBaseNetWorth> netWorthList;
 
     public DataBaseNetWorth(String name, String netWorth)
     {
         this.name = name;
         this.netWorth = netWorth;
+        netWorthList = new ArrayList<DataBaseNetWorth>();
     }
 
-    public static ArrayList<DataBaseNetWorth> netWorthList = new ArrayList<>();
+
 
     public static void loadNetWorths()
     {

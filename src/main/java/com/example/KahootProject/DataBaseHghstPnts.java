@@ -10,16 +10,16 @@ import java.util.ArrayList;
 
     public class DataBaseHghstPnts
     {
-        public String name;
-        public String points;
+        private String name;
+        private String points;
+        private static ArrayList<DataBaseHghstPnts> pointsList;
 
         public DataBaseHghstPnts(String name, String points)
         {
             this.name = name;
             this.points = points;
+            pointsList = new ArrayList<DataBaseHghstPnts>();
         }
-
-        public static ArrayList<DataBaseHghstPnts> pointsList = new ArrayList<>();
 
         public static void loadPoints()
         {
