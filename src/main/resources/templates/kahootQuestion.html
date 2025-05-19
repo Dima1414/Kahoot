@@ -21,7 +21,7 @@
 </head>
 <body style="background-color: #4607ff24">
 
-    <h1 th:text="${questionRand.question}"/>
+    <h1 th:text="${nextQuestion.question}"/>
     <table class="table">
         <thead>
             <tr>
@@ -29,31 +29,31 @@
                 <th scope="col">Answer</th>
             </tr>
         </thead>
-        <tr th:each="choice, index: ${questionRand.choices}">
+        <tr th:each="choice, index: ${nextQuestion.choices}">
             <td th:text="${index.count}"/>
             <td th:text="${choice}"/>
         </tr>
     </table>
 
     <form action="#" th:action="@{/answer}" method="post">
-        <p><input type="hidden" name="answerString" th:value="${questionRand.choices[0]}"/></p>
-        <p><input type="submit" th:value="${questionRand.choices[0]}" /></p>
-        <p><input type="hidden" name="trueAnswer" th:value="${questionRand.answer}" /></p>
+        <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[0]}"/></p>
+        <p><input type="submit" th:value="${nextQuestion.choices[0]}" /></p>
+        <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.answer}" /></p>
     </form>
     <form action="#" th:action="@{/answer}" method="post">
-        <p><input type="hidden" name="answerString" th:value="${questionRand.choices[1]}"/></p>
-        <p><input type="submit" th:value="${questionRand.choices[1]}" /></p>
-        <p><input type="hidden" name="trueAnswer" th:value="${questionRand.answer}" /></p>
+        <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[1]}"/></p>
+        <p><input type="submit" th:value="${nextQuestion.choices[1]}" /></p>
+        <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.answer}" /></p>
     </form>
     <form action="#" th:action="@{/answer}" method="post">
-        <p><input type="hidden" name="answerString" th:value="${questionRand.choices[2]}"/></p>
-        <p><input type="submit" th:value="${questionRand.choices[2]}" /></p>
-        <p><input type="hidden" name="trueAnswer" th:value="${questionRand.answer}" /></p>
+        <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[2]}"/></p>
+        <p><input type="submit" th:value="${nextQuestion.choices[2]}" /></p>
+        <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.answer}" /></p>
     </form>
     <form action="#" th:action="@{/answer}" method="post">
-        <p><input type="hidden" name="answerString" th:value="${questionRand.choices[3]}"/></p>
-        <p><input type="submit" th:value="${questionRand.choices[3]}" /></p>
-        <p><input type="hidden" name="trueAnswer" th:value="${questionRand.answer}" /></p>
+        <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[3]}"/></p>
+        <p><input type="submit" th:value="${nextQuestion.choices[3]}" /></p>
+        <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.answer}" /></p>
     </form>
     <h1 th:text="${score}"></h1>
     <h1 th:text="${answer}"></h1>

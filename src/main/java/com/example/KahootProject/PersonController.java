@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -23,9 +22,9 @@ public class PersonController {
          */
 
 
-        model.addAttribute("questionRand", g.getQuestionSet().get((int)(Math.random() * 3)));
+        model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(Math.random() * 3)));
 
-        return "people";
+        return "kahootQuestion";
     }
     @PostMapping("/answer")
     String answer(@RequestParam String answerString, @RequestParam String trueAnswer, Model model) {
@@ -38,8 +37,8 @@ public class PersonController {
         }
         model.addAttribute("answer", answerString);
         model.addAttribute("score", scoreCount);
-        model.addAttribute("questionRand", g.getQuestionSet().get(rand)); // next question, del .getChoices().get(rand)
+        model.addAttribute("nextQuestion", g.getQuestionSet().get(rand)); // next question, del .getChoices().get(rand)
 
-        return "people";
+        return "kahootQuestion";
     }
 }
