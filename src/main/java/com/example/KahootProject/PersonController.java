@@ -13,22 +13,12 @@ public class PersonController {
 
     @GetMapping
     String getPeople(Model model) {
-        Game g = new Game();
-        /*
-        for(int i = 0; i < 4; i++) {
-            model.addAttribute("question" + (i + 1), g.getQuestionSet().get(i));
-        }
-
-         */
-
-
-        model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(Math.random() * 3)));
+        getNextQuestion(model);
 
         return "kahootQuestion";
     }
     @PostMapping("/answer")
     String answer(@RequestParam String answerString, @RequestParam String trueAnswer, Model model) {
-        Game g = new Game();
         int rand = (int)(Math.random() * 3);
         if(trueAnswer.equals(answerString)) {
             scoreCount++;
@@ -37,8 +27,13 @@ public class PersonController {
         }
         model.addAttribute("answer", answerString);
         model.addAttribute("score", scoreCount);
-        model.addAttribute("nextQuestion", g.getQuestionSet().get(rand)); // next question, del .getChoices().get(rand)
+        getNextQuestion(model);
 
         return "kahootQuestion";
+    }
+
+    public void getNextQuestion(Model model) {
+        Game g = new Game();
+        model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(Math.random() * 3)));
     }
 }
