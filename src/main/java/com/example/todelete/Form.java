@@ -1,4 +1,4 @@
-package com.example.KahootProject;
+package com.example.todelete;
 
 class Form {
     private Boolean property;
