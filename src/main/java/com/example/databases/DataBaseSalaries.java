@@ -8,65 +8,49 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DataBaseSalaries
-{
+public class DataBaseSalaries {
     private String name;
-    private String salary;
-    public static ArrayList<DataBaseSalaries> salaries;
+    private int salary;
 
-    public DataBaseSalaries(String name, String salary)
-    {
+    public static ArrayList<DataBaseSalaries> salaries = new ArrayList<>();
+
+    public DataBaseSalaries(String name, int salary) {
         this.name = name;
         this.salary = salary;
-        salaries = new ArrayList<DataBaseSalaries>();
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public String getSalary()
-    {
+    public int getSalary() {
         return salary;
     }
 
-    public ArrayList<DataBaseSalaries> getSalaries()
-    {
-        loadSalaries();
-        return salaries;
-    }
-
-    public static void loadSalaries()
-    {
+    public static void loadSalaries() {
         String url = "https://www.espn.com/nba/salaries/_/seasontype/3";
 
-        try
-        {
-            Document document = Jsoup.connect(url).get();
-            Elements rows = document.select("table tbody tr");
+        try {
+            Document doc = Jsoup.connect(url).get();
+            Elements rows = doc.select("table tbody tr");
 
-            for (int i = 0; i < rows.size(); i++) {
-                Element row = rows.get(i);
+            for (Element row : rows) {
                 Elements cols = row.select("td");
 
-                if (cols.size() >= 4)
-                {
+                if (cols.size() >= 4) {
                     String name = cols.get(1).text();
-                    String salary = cols.get(3).text();
+                    String salaryStr = cols.get(3).text().replaceAll("[$,]", "");
 
-                    if (name.equalsIgnoreCase("NAME") && salary.equalsIgnoreCase("SALARY"))
-                    {
-                        continue;
+                    try {
+                        int salary = Integer.parseInt(salaryStr);
+                        salaries.add(new DataBaseSalaries(name, salary));
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid salary: " + salaryStr);
                     }
-
-                    salaries.add(new DataBaseSalaries(name, salary));
                 }
             }
 
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
