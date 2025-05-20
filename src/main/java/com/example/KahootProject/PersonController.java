@@ -37,3 +37,5 @@ public class PersonController {
         model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(Math.random() * 3)));
     }
 }
+
+// o
