@@ -12,16 +12,30 @@ public class DataBaseAvePnts
 {
     private String name;
     private double avgPoints;
+    public static ArrayList<DataBaseAvePnts> playerStatsList;
 
     // Constructor directly under the class name
     public DataBaseAvePnts(String name, double avgPoints)
     {
         this.name = name;
         this.avgPoints = avgPoints;
+        playerStatsList = new ArrayList<DataBaseAvePnts>();
     }
 
-    // Public static list to hold the data (accessible anywhere)
-    public static ArrayList<DataBaseAvePnts> playerStatsList = new ArrayList<>();
+    public String getName()
+    {
+        return name;
+    }
+
+    public double getAvgPoints()
+    {
+        return avgPoints;
+    }
+
+    public ArrayList<DataBaseAvePnts> getAvePointsList()
+    {
+        return playerStatsList;
+    }
 
     // Method to load player stats
     public static void loadPlayerStats()
