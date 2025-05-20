@@ -1,23 +1,31 @@
 package com.example.KahootProject;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
+import com.example.databases.DataBaseAvePnts;
+
+import java.util.*;
 
 public class Game {
     private ArrayList<Question> questionSet;
     public Game()  {
         questionSet = new ArrayList<Question>();
         String q = "Who has the highest salary?";
-        String[] a = {"Shaquille O'neal", "Lebron James", "Stephen Curry", "Larry Bird"};
+        ArrayList<String> a = new ArrayList<>(Arrays.asList("Shaquille O'neal", "Lebron James", "Stephen Curry", "Larry Bird"));
         questionSet.add(new Question(q, a, "Lebron James"));
         q = "Who is the tallest?";
-        a = new String[]{"Michael Jordan", "Jayson Tatum", "Luka Doncic", "Draymond Green"};
+        a = new ArrayList<>(Arrays.asList("Michael Jordan", "Jayson Tatum", "Luka Doncic", "Draymond Green"));
         questionSet.add(new Question(q, a, "Jayson Tatum"));
         q = "Who scored the most points in a game?";
-        a = new String[]{"Stephen Curry", "Wilt Chamberlain", "Luka Doncic", "Lebron James"};
+        a = new ArrayList<>(Arrays.asList("Stephen Curry", "Wilt Chamberlain", "Luka Doncic", "Lebron James"));
         questionSet.add(new Question(q, a, "Wilt Chamberlain"));
+
+        DataBaseAvePnts allAvePnts = new DataBaseAvePnts();
+
+        q = "Who has the greatest average points?";
+        for(int i = 0; i < allAvePnts.getAvePointsList().size(); i++) {
+            a.add(allAvePnts.getAvePointsList().get(i).getName());
+        }
+        questionSet.add(new Question(q, a, "Wilt Chamberlain"));
+
         // Collections.shuffle(questionSet, new Random());
     }
     public void start() {

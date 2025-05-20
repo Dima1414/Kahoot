@@ -33,6 +33,7 @@ import java.util.ArrayList;
 
         public ArrayList<DataBaseHghstPnts> getHghstPnts()
         {
+            loadPoints();
             return pointsList;
         }
 

@@ -33,6 +33,7 @@ public class DataBaseSalaries
 
     public ArrayList<DataBaseSalaries> getSalaries()
     {
+        loadSalaries();
         return salaries;
     }
 

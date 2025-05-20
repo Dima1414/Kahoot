@@ -19,7 +19,6 @@ public class PersonController {
     }
     @PostMapping("/answer")
     String answer(@RequestParam String answerString, @RequestParam String trueAnswer, Model model) {
-        int rand = (int)(Math.random() * 3);
         if(trueAnswer.equals(answerString)) {
             scoreCount++;
         } else {

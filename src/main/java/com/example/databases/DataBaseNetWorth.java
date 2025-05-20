@@ -33,6 +33,7 @@ public class DataBaseNetWorth
 
     public ArrayList<DataBaseNetWorth> getNetWorthList()
     {
+        loadNetWorths();
         return netWorthList;
     }
 

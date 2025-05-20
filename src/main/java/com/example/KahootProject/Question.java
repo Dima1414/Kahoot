@@ -7,11 +7,11 @@ public class Question {
     private String question;
     private ArrayList<String> choices;
     private String answer;
-    public Question(String question, String[] choices, String answer) {
+    public Question(String question, ArrayList<String> choices, String answer) {
         this.question = question;
         this.choices = new ArrayList<String>();
-        for (int i = 0; i < choices.length; i++) {
-            this.choices.add(choices[i]);
+        for (int i = 0; i < choices.size(); i++) {
+            this.choices.add(choices.get(i));
         }
         Collections.shuffle(this.choices);
         this.answer = answer;
