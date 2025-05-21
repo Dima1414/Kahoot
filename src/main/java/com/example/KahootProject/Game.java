@@ -10,11 +10,11 @@ public class Game {
         questionSet = new ArrayList<>();
         String q;
 
-//        DataBaseSalaries allSalaries = new DataBaseSalaries();
-//        q = "Who has the highest salary?";
-//        ArrayList<Choice> hghstSalary = allSalaries.getSalaryList();
-//        Collections.shuffle(hghstSalary);
-//        questionSet.add(new Question(q, hghstSalary));
+        DataBaseSalaries allSalaries = new DataBaseSalaries();
+        q = "Who has the highest salary?";
+        ArrayList<Choice> hghstSalary = allSalaries.getSalaryList();
+        Collections.shuffle(hghstSalary);
+        questionSet.add(new Question(q, hghstSalary));
 
 
 //        DataBaseNetWorth allNetWorths = new DataBaseNetWorth();
