@@ -10,11 +10,10 @@ import java.util.ArrayList;
 
 public class DataBaseNetWorth
 {
-    private static ArrayList<Choice> netWorthList;
-
+    private static ArrayList<Choice> netWorthList = new ArrayList<>();
     public DataBaseNetWorth()
     {
-        netWorthList = new ArrayList<>();
+
     }
 
     public ArrayList<Choice> getNetWorthList()

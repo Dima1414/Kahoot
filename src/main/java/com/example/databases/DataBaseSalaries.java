@@ -13,7 +13,6 @@ public class DataBaseSalaries {
     private static ArrayList<Choice> salaries = new ArrayList<>();
 
     public DataBaseSalaries() {
-        salaries = new ArrayList<>();
     }
 
     public ArrayList<Choice> getSalaryList()
@@ -29,10 +28,12 @@ public class DataBaseSalaries {
             Document doc = Jsoup.connect(url).get();
             Elements rows = doc.select("table tbody tr");
 
-            for (Element row : rows) {
+            for (int i = 0; i < rows.size(); i++) {
+                Element row = rows.get(i);
                 Elements cols = row.select("td");
 
                 if (cols.size() >= 4) {
+
                     String name = cols.get(1).text();
                     String salaryStr = cols.get(3).text().replaceAll("[$,]", "");
 
@@ -48,5 +49,9 @@ public class DataBaseSalaries {
         } catch (IOException e) {
             e.printStackTrace();
         }
+//        for(int i = 0; i < salaries.size(); i++)
+//        {
+//            System.out.println(salaries.get(i).getName());
+//        }
     }
 }

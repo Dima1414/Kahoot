@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
     public class DataBaseHghstPnts
     {
-        private static ArrayList<Choice> pointsList;
+        private static ArrayList<Choice> pointsList = new ArrayList<>();
 
         public DataBaseHghstPnts()
         {
-            pointsList = new ArrayList<>();
+
         }
 
         public ArrayList<Choice> getHghstPnts()
@@ -41,7 +41,7 @@ import java.util.ArrayList;
                     if (cols.size() > 3)
                     {
                         String name = cols.get(1).text();
-                        String points = cols.get(3).text();
+                        String points = cols.get(3).text().replaceAll("[ pts]", "");
 
                         if (name.equals("Player") || points.equals("Points"))
                         {
@@ -57,6 +57,12 @@ import java.util.ArrayList;
                 System.out.println("Error loading points data.");
                 e.printStackTrace();
             }
+
+            for(int i = 0; i < pointsList.size(); i++)
+            {
+                System.out.println(pointsList);
+            }
+
         }
     }
 
