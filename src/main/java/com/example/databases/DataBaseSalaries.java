@@ -9,22 +9,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DataBaseSalaries {
-    private String name;
-    private int salary;
 
-    public static ArrayList<DataBaseSalaries> salaries = new ArrayList<>();
+    private static ArrayList<Choice> salaries = new ArrayList<>();
 
-    public DataBaseSalaries(String name, int salary) {
-        this.name = name;
-        this.salary = salary;
+    public DataBaseSalaries() {
+        salaries = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getSalary() {
-        return salary;
+    public ArrayList<Choice> getSalaryList()
+    {
+        loadSalaries();
+        return salaries;
     }
 
     public static void loadSalaries() {
@@ -42,8 +37,8 @@ public class DataBaseSalaries {
                     String salaryStr = cols.get(3).text().replaceAll("[$,]", "");
 
                     try {
-                        int salary = Integer.parseInt(salaryStr);
-                        salaries.add(new DataBaseSalaries(name, salary));
+                        double salary = Double.parseDouble(salaryStr);
+                        salaries.add(new Choice(name, salary));
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid salary: " + salaryStr);
                     }

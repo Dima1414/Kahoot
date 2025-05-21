@@ -10,28 +10,14 @@ import java.util.ArrayList;
 
     public class DataBaseHghstPnts
     {
-        private String name;
-        private String points;
-        private static ArrayList<DataBaseHghstPnts> pointsList;
+        private static ArrayList<Choice> pointsList;
 
-        public DataBaseHghstPnts(String name, String points)
+        public DataBaseHghstPnts()
         {
-            this.name = name;
-            this.points = points;
-            pointsList = new ArrayList<DataBaseHghstPnts>();
+            pointsList = new ArrayList<>();
         }
 
-        public String getName()
-        {
-            return name;
-        }
-
-        public String getHighestPoints()
-        {
-            return points;
-        }
-
-        public ArrayList<DataBaseHghstPnts> getHghstPnts()
+        public ArrayList<Choice> getHghstPnts()
         {
             loadPoints();
             return pointsList;
@@ -62,7 +48,7 @@ import java.util.ArrayList;
                             continue;
                         }
 
-                        pointsList.add(new DataBaseHghstPnts(name, points));
+                        pointsList.add(new Choice(name, Double.parseDouble(points)));
                     }
                 }
             }

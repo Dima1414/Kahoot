@@ -10,28 +10,14 @@ import java.util.ArrayList;
 
 public class DataBaseNetWorth
 {
-    private String name;
-    private String netWorth;
-    public static ArrayList<DataBaseNetWorth> netWorthList;
+    private static ArrayList<Choice> netWorthList;
 
-    public DataBaseNetWorth(String name, String netWorth)
+    public DataBaseNetWorth()
     {
-        this.name = name;
-        this.netWorth = netWorth;
-        netWorthList = new ArrayList<DataBaseNetWorth>();
+        netWorthList = new ArrayList<>();
     }
 
-    public String getName()
-    {
-        return name;
-    }
-
-    public String getNetWorth()
-    {
-        return netWorth;
-    }
-
-    public ArrayList<DataBaseNetWorth> getNetWorthList()
+    public ArrayList<Choice> getNetWorthList()
     {
         loadNetWorths();
         return netWorthList;
@@ -58,7 +44,7 @@ public class DataBaseNetWorth
                 {
                     String name = nameElement.text();
                     String netWorth = netWorthElement.text();
-                    netWorthList.add(new DataBaseNetWorth(name, netWorth));
+                    netWorthList.add(new Choice(name, Double.parseDouble(netWorth)));
                 }
             }
         }

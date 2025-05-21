@@ -33,7 +33,7 @@ public class PersonController {
 
     public void getNextQuestion(Model model) {
         Game g = new Game();
-        model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(Math.random() * 3)));
+        model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(0)));
     }
 }
 

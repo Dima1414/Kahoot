@@ -10,15 +10,15 @@ import java.util.ArrayList;
 
 public class DataBaseAvePnts
 {
-    private static ArrayList<AvePnts> playerStatsList;
+    private static ArrayList<Choice> playerStatsList;
 
     // Constructor directly under the class name
     public DataBaseAvePnts()
     {
-        playerStatsList = new ArrayList<AvePnts>();
+        playerStatsList = new ArrayList<>();
     }
 
-    public ArrayList<AvePnts> getAvePointsList()
+    public ArrayList<Choice> getAvePointsList()
     {
         loadPlayerStats();
         return playerStatsList;
@@ -53,7 +53,7 @@ public class DataBaseAvePnts
                     try
                     {
                         double avgPoints = Double.parseDouble(avgPointsStr);
-                        playerStatsList.add(new AvePnts(name, avgPoints));
+                        playerStatsList.add(new Choice(name, avgPoints));
                     }
                     catch (NumberFormatException e)
                     {

@@ -1,28 +1,40 @@
 package com.example.KahootProject;
 
+import com.example.databases.Choice;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Question {
     private String question;
-    private ArrayList<String> choices;
-    private String answer;
-    public Question(String question, ArrayList<String> choices, String answer) {
+    private ArrayList<Choice> choices;
+    private String correctAnswer;
+    public Question(String question, ArrayList<Choice> choices) {
         this.question = question;
-        this.choices = new ArrayList<String>();
+        this.choices = new ArrayList<>();
         for (int i = 0; i < choices.size(); i++) {
             this.choices.add(choices.get(i));
         }
-        Collections.shuffle(this.choices);
-        this.answer = answer;
+
+        double temp;
+        double max = 0;
+        int index = -1;
+        for(int i = 0; i < 4; i++) {
+            temp = choices.get(i).getStat();
+            if(temp > max) {
+                max = temp;
+                index = i;
+            }
+        }
+        correctAnswer = choices.get(index).getName();
     }
     public String getQuestion() {
         return question;
     }
-    public ArrayList<String> getChoices() {
+    public ArrayList<Choice> getChoices() {
         return choices;
     }
-    public String getAnswer() {
-        return answer;
+    public String getCorrectAnswer() {
+        return correctAnswer;
     }
 }
