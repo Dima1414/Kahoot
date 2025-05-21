@@ -33,7 +33,8 @@ public class KahootController {
 
     public void getNextQuestion(Model model) {
         Game g = new Game();
-        model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(0)));
+        model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(Math.random() * 2)));
+        // number of questions!!!
     }
 }
 
