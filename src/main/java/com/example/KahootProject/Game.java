@@ -40,6 +40,18 @@ public class Game {
         Collections.shuffle(hghstPntsList);
         questionSet.add(new Question(q, hghstPntsList));
 
+        DataBaseAvgRebounds allAveRebounds = new DataBaseAvgRebounds();
+        q = "Who has the greatest average rebounds in a game?";
+        ArrayList<Choice> aveReboundsList = allAveRebounds.getRebounds();
+        Collections.shuffle(aveReboundsList);
+        questionSet.add(new Question(q, aveReboundsList));
+
+        DataBaseAvgThreePoints allAvgThreePoints = new DataBaseAvgThreePoints();
+        q = "Who has the greatest average three points in a game?";
+        ArrayList<Choice> aveThreesList = allAvgThreePoints.getThrees();
+        Collections.shuffle(aveThreesList);
+        questionSet.add(new Question(q, aveThreesList));
+
 
     }
     public ArrayList<Question> getQuestionSet() {
