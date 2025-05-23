@@ -7,6 +7,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 
 public class DataBaseHghstPnts extends Choice {
@@ -18,6 +19,7 @@ public class DataBaseHghstPnts extends Choice {
 
     public static ArrayList<Choice> getHghstPnts() {
         loadPoints();
+        Collections.shuffle(pointsList);
         return pointsList;
     }
 

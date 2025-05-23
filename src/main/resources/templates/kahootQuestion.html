@@ -22,18 +22,9 @@
 <body style="background-color: #4607ff24">
 
     <h1 th:text="${nextQuestion.question}"/>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Number</th>
-                <th scope="col">Answer</th>
-            </tr>
-        </thead>
-        <tr th:each="choice, index: ${nextQuestion.choices}">
-            <td th:text="${index.count}"/>
-            <td th:text="${choice.name}"/>
-        </tr>
-    </table>
+
+    <h1 th:text="'Score: ' + ${score}"></h1>
+    <h1 th:text="${answer}"></h1>
 
     <form action="#" th:action="@{/answer}" method="post">
         <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[0].name}"/></p>
@@ -55,9 +46,19 @@
         <p><input type="submit" th:value="${nextQuestion.choices[3].name}" /></p>
         <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.correctAnswer}" /></p>
     </form>
-    <h1 th:text="${score}"></h1>
-    <h1 th:text="${answer}"></h1>
 
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Answer</th>
+        </tr>
+        </thead>
+        <tr th:each="choice, index: ${nextQuestion.choices}">
+            <td th:text="${index.count}"/>
+            <td th:text="${choice.name}"/>
+        </tr>
+    </table>
 
 </body>
 </html>

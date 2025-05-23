@@ -6,6 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 @Controller
 public class KahootController {
 
@@ -33,7 +36,9 @@ public class KahootController {
 
     public void getNextQuestion(Model model) {
         Game g = new Game();
-        model.addAttribute("nextQuestion", g.getQuestionSet().get((int)(Math.random() * 3)));
+        ArrayList<Question> qSet = g.getQuestionSet();
+        Collections.shuffle(qSet);
+        model.addAttribute("nextQuestion", qSet.get(0));
         // number of questions!!!
     }
 }

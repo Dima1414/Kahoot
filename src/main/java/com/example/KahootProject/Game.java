@@ -35,6 +35,11 @@ public class Game {
         Collections.shuffle(avePointList);
         questionSet.add(new Question(q, avePointList));
 
+        q = "Who has the highest points in a game?";
+        ArrayList<Choice> hghstPntsList = DataBaseHghstPnts.getHghstPnts();
+        Collections.shuffle(hghstPntsList);
+        questionSet.add(new Question(q, hghstPntsList));
+
 
     }
     public ArrayList<Question> getQuestionSet() {
