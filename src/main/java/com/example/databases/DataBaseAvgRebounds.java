@@ -14,7 +14,7 @@ public class DataBaseAvgRebounds
 
     public DataBaseAvgRebounds()
     {
-
+        reboundList = new ArrayList<>();
     }
 
     public ArrayList<Choice> getRebounds()

@@ -14,7 +14,7 @@ public class DataBaseAvgThreePoints
 
     public DataBaseAvgThreePoints()
     {
-
+        threePntsList = new ArrayList<>();
     }
 
     public ArrayList<Choice> getRebounds()
