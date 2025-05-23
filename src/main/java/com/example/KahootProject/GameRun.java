@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Collections;
 
-
 public class GameRun {
     private ArrayList<Choice> answerList;
     private ArrayList<CreateQuestion> questionSet;
@@ -106,6 +105,19 @@ public class GameRun {
 
         Choice maxPlayer = tempSalList.get(0);
         for (Choice p : tempSalList) {
+            if (p.getStat() > maxPlayer.getStat()) {
+                maxPlayer = p;
+            }
+        }
+
+        return maxPlayer.getName();
+    }
+
+    public static String findHighestThree(ArrayList<Choice> tempThreeList) {
+        if (tempThreeList == null || tempThreeList.isEmpty()) return "No data";
+
+        Choice maxPlayer = tempThreeList.get(0);
+        for (Choice p : tempThreeList) {
             if (p.getStat() > maxPlayer.getStat()) {
                 maxPlayer = p;
             }
