@@ -9,8 +9,8 @@ public class Main {
             System.out.println(game.getCurrentQuestion());
             System.out.println();
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Enter your answer: ");
             System.out.println(game.getCurrentQuestion().getAnswer());
+            System.out.println("Enter your answer: ");
             String answer = scanner.nextLine();
             if (game.checkAnswer(answer)) {
                 System.out.println("Correct!");
