@@ -13,6 +13,7 @@ public class DataBaseSalaries {
     private static ArrayList<Choice> salaries = new ArrayList<>();
 
     public DataBaseSalaries() {
+        salaries = new ArrayList<>();
     }
 
     public ArrayList<Choice> getSalaryList()

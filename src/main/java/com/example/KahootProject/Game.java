@@ -10,12 +10,11 @@ public class Game {
         questionSet = new ArrayList<>();
         String q;
 
-         DataBaseSalaries allSalaries = new DataBaseSalaries();
-         allSalaries.loadSalaries();
-//        q = "Who has the highest salary?";
-//        ArrayList<Choice> hghstSalary = allSalaries.getSalaryList();
-//        Collections.shuffle(hghstSalary);
-//        questionSet.add(new Question(q, hghstSalary));
+        DataBaseSalaries allSalaries = new DataBaseSalaries();
+        q = "Who has the highest salary?";
+        ArrayList<Choice> hghstSalary = allSalaries.getSalaryList();
+        Collections.shuffle(hghstSalary);
+        questionSet.add(new Question(q, hghstSalary));
 
 
 //        DataBaseNetWorth allNetWorths = new DataBaseNetWorth();
@@ -24,12 +23,11 @@ public class Game {
 //        Collections.shuffle(hghstNetWorth);
 //        questionSet.add(new Question(q, hghstNetWorth));
 
-        DataBaseHghstPnts allHghstPnts = new DataBaseHghstPnts();
-        allHghstPnts.loadPoints();
-        q = "Who has the highest number of points in a game?";
-        ArrayList<Choice> hghstPointList = allHghstPnts.getHghstPnts();
-        Collections.shuffle(hghstPointList);
-        questionSet.add(new Question(q, hghstPointList));
+        DataBaseLakersWeight allLakersWeight = new DataBaseLakersWeight();
+        q = "Who has the largest weight on the Lakers?";
+        ArrayList<Choice> lakersWeightList = allLakersWeight.getLakersWeight();
+        Collections.shuffle(lakersWeightList);
+        questionSet.add(new Question(q, lakersWeightList));
 
         DataBaseAvgPnts allAvePnts = new DataBaseAvgPnts();
         q = "Who has the greatest average points in a game?";
