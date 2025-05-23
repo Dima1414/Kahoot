@@ -24,7 +24,8 @@
     <h1 th:text="${nextQuestion.question}"/>
 
     <h1 th:text="'Score: ' + ${score}"></h1>
-    <h1 th:text="${answer}"></h1>
+    <h1 th:text="'Max Score: ' + ${maxScore}"></h1>
+<!--    <h1 th:text="${nextQuestion.correctAnswer}"></h1>-->
 
     <form action="#" th:action="@{/answer}" method="post">
         <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[0].name}"/></p>
@@ -47,18 +48,18 @@
         <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.correctAnswer}" /></p>
     </form>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Number</th>
-            <th scope="col">Answer</th>
-        </tr>
-        </thead>
-        <tr th:each="choice, index: ${nextQuestion.choices}">
-            <td th:text="${index.count}"/>
-            <td th:text="${choice.name}"/>
-        </tr>
-    </table>
+<!--    <table class="table">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th scope="col">Number</th>-->
+<!--            <th scope="col">Answer</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tr th:each="choice, index: ${nextQuestion.choices}">-->
+<!--            <td th:text="${index.count}"/>-->
+<!--            <td th:text="${choice.name}"/>-->
+<!--        </tr>-->
+<!--    </table>-->
 
 </body>
 </html>

@@ -13,6 +13,7 @@ import java.util.Collections;
 public class KahootController {
 
     private int scoreCount = 0;
+    private int maxScore = 0;
 
     @GetMapping
     String getPeople(Model model) {
@@ -24,11 +25,18 @@ public class KahootController {
     String answer(@RequestParam String answerString, @RequestParam String trueAnswer, Model model) {
         if(trueAnswer.equals(answerString)) {
             scoreCount++;
+            if(scoreCount > maxScore) {
+                maxScore = scoreCount;
+            }
         } else {
+            if(scoreCount >= maxScore) {
+                maxScore = scoreCount;
+            }
             scoreCount = 0;
         }
         model.addAttribute("answer", answerString);
         model.addAttribute("score", scoreCount);
+        model.addAttribute("maxScore", maxScore);
         getNextQuestion(model);
 
         return "kahootQuestion";
