@@ -8,24 +8,24 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DataBaseAveThreePnts
+public class DataBaseAvgRebounds
 {
-    private static ArrayList<Choice> threePntsList = new ArrayList<>();
+    private static ArrayList<Choice> reboundList = new ArrayList<>();
 
-    public DataBaseAveThreePnts()
+    public DataBaseAvgRebounds()
     {
 
     }
 
     public ArrayList<Choice> getRebounds()
     {
-        loadThreePnts();
-        return threePntsList;
+        loadRebounds();
+        return reboundList;
     }
 
-    public static void loadThreePnts()
+    public static void loadRebounds()
     {
-        String url = "https://www.espn.com/nba/seasonleaders/_/league/nba/sort/avgThreePointFieldGoalsMade";
+        String url = "https://www.espn.com/nba/seasonleaders/_/league/nba/sort/avgRebounds";
 
         try
         {
@@ -41,21 +41,21 @@ public class DataBaseAveThreePnts
                 if (cols.size() >= 5)
                 {
                     String name = cols.get(1).text();
-                    String avgThreesStr = cols.get(7).text();
+                    String avgReboundsStr = cols.get(8).text();
 
-                    if (name.equals("PLAYER") || avgThreesStr.equals("3PM"))
+                    if (name.equals("PLAYER") || avgReboundsStr.equals("RPG"))
                     {
                         continue;
                     }
 
                     try
                     {
-                        double avgThrees = Double.parseDouble(avgThreesStr);
-                        threePntsList.add(new Choice(name, avgThrees));
+                        double avgRebounds = Double.parseDouble(avgReboundsStr);
+                        reboundList.add(new Choice(name, avgRebounds));
                     }
                     catch (NumberFormatException e)
                     {
-                        System.out.println("Could not parse avg points for: " + name);
+                        System.out.println("Could not parse avg rebounds for: " + name);
                     }
                 }
             }
@@ -67,3 +67,7 @@ public class DataBaseAveThreePnts
         }
     }
 }
+
+
+
+

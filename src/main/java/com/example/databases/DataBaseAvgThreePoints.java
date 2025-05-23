@@ -8,24 +8,24 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DataBaseAveRebounds
+public class DataBaseAvgThreePoints
 {
-    private static ArrayList<Choice> reboundList = new ArrayList<>();
+    private static ArrayList<Choice> threePntsList = new ArrayList<>();
 
-    public DataBaseAveRebounds()
+    public DataBaseAvgThreePoints()
     {
 
     }
 
     public ArrayList<Choice> getRebounds()
     {
-        loadRebounds();
-        return reboundList;
+        loadThreePnts();
+        return threePntsList;
     }
 
-    public static void loadRebounds()
+    public static void loadThreePnts()
     {
-        String url = "https://www.espn.com/nba/seasonleaders/_/league/nba/sort/avgRebounds";
+        String url = "https://www.espn.com/nba/seasonleaders/_/league/nba/sort/avgThreePointFieldGoalsMade";
 
         try
         {
@@ -41,21 +41,21 @@ public class DataBaseAveRebounds
                 if (cols.size() >= 5)
                 {
                     String name = cols.get(1).text();
-                    String avgReboundsStr = cols.get(8).text();
+                    String avgThreesStr = cols.get(7).text();
 
-                    if (name.equals("PLAYER") || avgReboundsStr.equals("RPG"))
+                    if (name.equals("PLAYER") || avgThreesStr.equals("3PM"))
                     {
                         continue;
                     }
 
                     try
                     {
-                        double avgRebounds = Double.parseDouble(avgReboundsStr);
-                        reboundList.add(new Choice(name, avgRebounds));
+                        double avgThrees = Double.parseDouble(avgThreesStr);
+                        threePntsList.add(new Choice(name, avgThrees));
                     }
                     catch (NumberFormatException e)
                     {
-                        System.out.println("Could not parse avg rebounds for: " + name);
+                        System.out.println("Could not parse avg points for: " + name);
                     }
                 }
             }
@@ -67,6 +67,4 @@ public class DataBaseAveRebounds
         }
     }
 }
-
-
 

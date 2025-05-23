@@ -8,12 +8,12 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DataBaseAvePnts
+public class DataBaseAvgPnts
 {
     private static ArrayList<Choice> playerStatsList;
 
     // Constructor directly under the class name
-    public DataBaseAvePnts()
+    public DataBaseAvgPnts()
     {
         playerStatsList = new ArrayList<>();
     }

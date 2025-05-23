@@ -31,7 +31,7 @@ public class Game {
         Collections.shuffle(hghstPointList);
         questionSet.add(new Question(q, hghstPointList));
 
-        DataBaseAvePnts allAvePnts = new DataBaseAvePnts();
+        DataBaseAvgPnts allAvePnts = new DataBaseAvgPnts();
         q = "Who has the greatest average points in a game?";
         ArrayList<Choice> avePointList = allAvePnts.getAvePointsList();
         Collections.shuffle(avePointList);

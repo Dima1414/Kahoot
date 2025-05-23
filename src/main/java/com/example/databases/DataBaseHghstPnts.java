@@ -58,10 +58,10 @@ import java.util.ArrayList;
                 e.printStackTrace();
             }
 
-            for(int i = 0; i < pointsList.size(); i++)
-            {
-                System.out.println(pointsList);
-            }
+//            for(int i = 0; i < pointsList.size(); i++)
+//            {
+//                System.out.println(pointsList);
+//            }
 
         }
     }
