@@ -32,6 +32,8 @@ public class KahootController {
         questions = game.getQuestionSet();
         Collections.shuffle(questions);
         getNextQuestion(model);
+        model.addAttribute("score", scoreCount);
+        model.addAttribute("maxScore", maxScore);
         return "kahootQuestion";
     }
 
