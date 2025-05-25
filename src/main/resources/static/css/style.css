@@ -1,0 +1,74 @@
+
+.choice-button1 {
+    background-color: #e20f0f;
+    color: #abffe2;
+    width: 735px;
+    height: 335px;
+    /*padding: 150px 250px;*/
+    font-size: 35px;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 65px;
+}
+
+.choice-button2 {
+    background-color: #288710;
+    color: #abffe2;
+    /*padding: 150px 250px;*/
+    width: 735px;
+    height: 335px;
+    font-size: 35px;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 400px;
+}
+
+.choice-button3 {
+    background-color: #10389e;
+    color: #abffe2;
+    /*padding: 150px 250px;*/
+    width: 735px;
+    height: 335px;
+    font-size: 35px;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 65px;
+    left: 735px;
+}
+
+.choice-button4 {
+    background-color: #c3970d;
+    color: #abffe2;
+    /*padding: 150px 250px;*/
+    width: 735px;
+    height: 335px;
+    font-size: 35px;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 400px;
+    left: 735px;
+}
+
+.score-text {
+    position: absolute;
+    top: 740px;
+    left: 10px;
+}
+
+.max-score-text {
+    position: absolute;
+    top: 740px;
+    right: 10px;
+}
+
+
+
+h1 {
+    color: white;  /* changes all <p> text to blue */
+    text-align: center;
+    font-style: oblique;
+}

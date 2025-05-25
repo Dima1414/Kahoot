@@ -19,6 +19,9 @@ public class KahootController {
     String getPeople(Model model) {
         getNextQuestion(model);
 
+        model.addAttribute("score", scoreCount);
+        model.addAttribute("maxScore", maxScore);
+
         return "kahootQuestion";
     }
     @PostMapping("/answer")
@@ -29,9 +32,6 @@ public class KahootController {
                 maxScore = scoreCount;
             }
         } else {
-            if(scoreCount >= maxScore) {
-                maxScore = scoreCount;
-            }
             scoreCount = 0;
         }
         model.addAttribute("answer", answerString);
