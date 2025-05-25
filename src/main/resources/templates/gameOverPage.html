@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Over</title>
+</head>
+<body>
+<h1>You Have Completed the Quiz!</h1>
+<p>Your final score: <strong th:text="${finalScore}"></strong></p>
+<p>Max streak: <strong th:text="${maxScore}"></strong></p>
+<form method="post" action="/start">
+    <button type="submit">Play Again</button>
+</form>
+</body>
+</html>
