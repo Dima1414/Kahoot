@@ -51,6 +51,12 @@ public class KahootController {
 
         currentQuestionIndex++;
 
+        if (currentQuestionIndex >= 10 || currentQuestionIndex >= questions.size()) {
+            model.addAttribute("finalScore", scoreCount);
+            model.addAttribute("maxScore", maxScore);
+            return "gameOverPage";
+        }
+
         model.addAttribute("score", scoreCount);
         model.addAttribute("maxScore", maxScore);
         getNextQuestion(model);
