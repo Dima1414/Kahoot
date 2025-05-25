@@ -53,7 +53,7 @@ public class KahootController {
 
         currentQuestionIndex++;
 
-        if (currentQuestionIndex >= 10 || currentQuestionIndex >= questions.size()) {
+        if (currentQuestionIndex >= 10) {
             model.addAttribute("finalScore", scoreCount);
             model.addAttribute("maxScore", maxScore);
             return "gameOverPage";
@@ -66,8 +66,11 @@ public class KahootController {
     }
 
     public void getNextQuestion(Model model) {
-        if (questions != null && currentQuestionIndex < questions.size()) {
-            model.addAttribute("nextQuestion", questions.get(currentQuestionIndex));
+            if (questions != null && currentQuestionIndex < 10) {
+                int randomIndex = (int)(Math.random() * questions.size());
+                model.addAttribute("nextQuestion", questions.get(randomIndex));
+            }
         }
+
     }
-}
+
