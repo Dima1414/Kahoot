@@ -1,0 +1,42 @@
+
+.start-button {
+    background-color: #ed550e;
+    color: #abffe2;
+    /*padding: 150px 250px;*/
+    width: 400px;
+    height: 200px;
+    font-size: 75px;
+    cursor: pointer;
+    border: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: "Andale Mono";
+}
+
+.text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    text-align: center;
+}
+
+.text-wrapper p {
+    font-size: 30px;
+    max-width: 600px;
+}
