@@ -2,13 +2,13 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>NBA KNOWLEDGE QUIZ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 <body style="background-color: #2b0c49">
 
-    <h1 th:text="${nextQuestion.question}"/>
+    <h1 class="question" th:text="${nextQuestion.question}"/>
 
     <form action="#" th:action="@{/answer}" method="post">
         <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[0].name}"/></p>

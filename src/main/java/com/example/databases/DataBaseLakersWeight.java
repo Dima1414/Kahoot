@@ -49,7 +49,6 @@ public class DataBaseLakersWeight
                     }
 
                     lakersWeightList.add(new Choice(name, Double.parseDouble(weight)));
-                    System.out.println(name + " " + weight);
                 }
             }
         }

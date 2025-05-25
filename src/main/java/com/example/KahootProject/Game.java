@@ -16,13 +16,6 @@ public class Game {
         Collections.shuffle(hghstSalary);
         questionSet.add(new Question(q, hghstSalary));
 
-
-//        DataBaseNetWorth allNetWorths = new DataBaseNetWorth();
-//        q = "Who has the highest net worth?";
-//        ArrayList<Choice> hghstNetWorth = allNetWorths.getNetWorthList();
-//        Collections.shuffle(hghstNetWorth);
-//        questionSet.add(new Question(q, hghstNetWorth));
-
         DataBaseLakersWeight allLakersWeight = new DataBaseLakersWeight();
         q = "Who has the largest weight on the Lakers?";
         ArrayList<Choice> lakersWeightList = allLakersWeight.getLakersWeight();
@@ -35,10 +28,11 @@ public class Game {
         Collections.shuffle(avePointList);
         questionSet.add(new Question(q, avePointList));
 
-        q = "Who has the highest career-high points?";
-        ArrayList<Choice> hghstPntsList = DataBaseHghstPnts.getHghstPnts();
-        Collections.shuffle(hghstPntsList);
-        questionSet.add(new Question(q, hghstPntsList));
+//        DataBaseHghstPnts allHghstPnts = new DataBaseHghstPnts();
+//        q = "Who has the highest career-high points?";
+//        ArrayList<Choice> hghstPntsList = allHghstPnts.getHghstPnts();
+//        Collections.shuffle(hghstPntsList);
+//        questionSet.add(new Question(q, hghstPntsList));
 
         DataBaseAvgRebounds allAveRebounds = new DataBaseAvgRebounds();
         q = "Who has the greatest average rebounds in a game?";

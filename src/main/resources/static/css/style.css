@@ -54,21 +54,25 @@
 }
 
 .score-text {
+    color: white;  /* changes all <p> text to blue */
+    font-style: oblique;
     position: absolute;
     top: 740px;
     left: 10px;
 }
 
 .max-score-text {
+    color: white;  /* changes all <p> text to blue */
+    font-style: oblique;
     position: absolute;
     top: 740px;
     right: 10px;
 }
 
-
-
-h1 {
-    color: white;  /* changes all <p> text to blue */
+.question {
+    color: white;
     text-align: center;
-    font-style: oblique;
+    font-variant: lining-nums;
+    font-weight: bold;
+    top: 100px;
 }
