@@ -15,40 +15,51 @@ public class KahootController {
     private int scoreCount = 0;
     private int maxScore = 0;
 
-    @GetMapping
-    String getPeople(Model model) {
+    private int currentQuestionIndex = 0;
+    private Game game;
+    private ArrayList<Question> questions;
+
+    @GetMapping("/")
+    public String showStartPage() {
+        return "startPage";
+    }
+
+    @PostMapping("/start")
+    public String startQuiz(Model model) {
+        scoreCount = 0;
+        currentQuestionIndex = 0;
+        game = new Game();
+        questions = game.getQuestionSet();
+        Collections.shuffle(questions);
         getNextQuestion(model);
-
-        model.addAttribute("score", scoreCount);
-        model.addAttribute("maxScore", maxScore);
-
         return "kahootQuestion";
     }
+
     @PostMapping("/answer")
-    String answer(@RequestParam String answerString, @RequestParam String trueAnswer, Model model) {
-        if(trueAnswer.equals(answerString)) {
+    public String answer(@RequestParam String answerString, @RequestParam String trueAnswer, Model model) {
+        if (trueAnswer.equals(answerString)) {
             scoreCount++;
-            if(scoreCount > maxScore) {
+            if (scoreCount > maxScore) {
                 maxScore = scoreCount;
             }
         } else {
+            if (scoreCount >= maxScore) {
+                maxScore = scoreCount;
+            }
             scoreCount = 0;
         }
-        model.addAttribute("answer", answerString);
+
+        currentQuestionIndex++;
+
         model.addAttribute("score", scoreCount);
         model.addAttribute("maxScore", maxScore);
         getNextQuestion(model);
-
         return "kahootQuestion";
     }
 
     public void getNextQuestion(Model model) {
-        Game g = new Game();
-        ArrayList<Question> qSet = g.getQuestionSet();
-        Collections.shuffle(qSet);
-        model.addAttribute("nextQuestion", qSet.get(0));
-        // number of questions!!!
+        if (questions != null && currentQuestionIndex < questions.size()) {
+            model.addAttribute("nextQuestion", questions.get(currentQuestionIndex));
+        }
     }
 }
-
-// o
