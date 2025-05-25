@@ -28,11 +28,11 @@ public class Game {
         Collections.shuffle(avePointList);
         questionSet.add(new Question(q, avePointList));
 
-//        DataBaseHghstPnts allHghstPnts = new DataBaseHghstPnts();
-//        q = "Who has the highest career-high points?";
-//        ArrayList<Choice> hghstPntsList = allHghstPnts.getHghstPnts();
-//        Collections.shuffle(hghstPntsList);
-//        questionSet.add(new Question(q, hghstPntsList));
+        DataBaseHghstPnts allHghstPnts = new DataBaseHghstPnts();
+        q = "Who has the highest career-high points?";
+        ArrayList<Choice> hghstPntsList = allHghstPnts.getHghstPnts();
+        Collections.shuffle(hghstPntsList);
+        questionSet.add(new Question(q, hghstPntsList));
 
         DataBaseAvgRebounds allAveRebounds = new DataBaseAvgRebounds();
         q = "Who has the greatest average rebounds in a game?";

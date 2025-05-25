@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
-public class DataBaseHghstPnts extends Choice {
+public class DataBaseHghstPnts {
     private static ArrayList<Choice> pointsList = new ArrayList<>();
 
-    public DataBaseHghstPnts(String name, double stat) {
-        super(name, stat);
+    public DataBaseHghstPnts() {
+        pointsList = new ArrayList<>();
     }
 
-    public static ArrayList<Choice> getHghstPnts() {
+
+    public ArrayList<Choice> getHghstPnts() {
         loadPoints();
         Collections.shuffle(pointsList);
         return pointsList;
