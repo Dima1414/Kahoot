@@ -20,7 +20,7 @@ public class KahootController {
     private ArrayList<Question> questions;
 
     @GetMapping("/")
-    public String showStartPage() {
+    public String showStartPage(Model model) {
         return "startPage";
     }
 
@@ -32,6 +32,8 @@ public class KahootController {
         questions = game.getQuestionSet();
         Collections.shuffle(questions);
         getNextQuestion(model);
+        model.addAttribute("score", scoreCount);
+        model.addAttribute("maxScore", maxScore);
         return "kahootQuestion";
     }
 

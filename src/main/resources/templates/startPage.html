@@ -5,9 +5,21 @@
 </head>
 <body>
 <h1>Welcome to the NBA Knowledge Quiz!</h1>
-<p>Test your knowledge of NBA player stats.</p>
+<div class="text-wrapper">
+    <p>Test your knowledge of NBA player stats.</p>
+</div>
 <form action="/start" method="post">
-    <button type="submit">Start Quiz</button>
+    <div class="button-wrapper">
+        <p>
+            <input type="submit"
+                   th:value="${'Start Quiz'}"
+                   class="start-button" />
+        </p>
+    </div>
 </form>
 </body>
 </html>
+
+<body style="background-color: #b5d38c">
+
+<link rel="stylesheet" th:href="@{/css/styleStart.css}">
