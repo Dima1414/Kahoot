@@ -49,6 +49,7 @@ public class KahootController {
                 maxScore = scoreCount;
             }
             scoreCount = 0;
+
         }
 
         currentQuestionIndex++;
