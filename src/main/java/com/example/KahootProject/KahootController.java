@@ -1,5 +1,6 @@
 package com.example.KahootProject;
 
+import com.example.databases.Choice;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
@@ -69,6 +70,7 @@ public class KahootController {
     public void getNextQuestion(Model model) {
             if (questions != null && currentQuestionIndex < 10) {
                 int randomIndex = (int)(Math.random() * questions.size());
+                Collections.shuffle(questions.get(randomIndex).getChoices());
                 model.addAttribute("nextQuestion", questions.get(randomIndex));
             }
         }

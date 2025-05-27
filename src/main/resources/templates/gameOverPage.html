@@ -5,10 +5,24 @@
 </head>
 <body>
 <h1>You Have Completed the Quiz!</h1>
-<p>Your final score: <strong th:text="${finalScore}"></strong></p>
-<p>Max streak: <strong th:text="${maxScore}"></strong></p>
+<div class="text-wrapper">
+    <p>Your final score: <strong th:text="${finalScore}"></strong></p>
+</div>
+<div class="text-wrapper">
+    <p>Max streak: <strong th:text="${maxScore}"></strong></p>
+</div>
 <form method="post" action="/start">
-    <button type="submit">Play Again</button>
+    <div class="button-wrapper">
+        <p>
+            <input type="submit"
+                   th:value="${'Play Again'}"
+                   class="restart-button" />
+        </p>
+    </div>
 </form>
 </body>
 </html>
+
+<body style="background-color: #b5d38c">
+
+<link rel="stylesheet" th:href="@{/css/styleEnd.css}">
