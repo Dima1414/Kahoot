@@ -45,6 +45,7 @@ public class Game {
         ArrayList<Choice> aveThreesList = allAvgThreePoints.getThrees();
         Collections.shuffle(aveThreesList);
         questionSet.add(new Question(q, aveThreesList));
+        Collections.shuffle(questionSet);
     }
     public ArrayList<Question> getQuestionSet() {
         return questionSet;

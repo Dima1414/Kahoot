@@ -71,12 +71,9 @@ public class KahootController {
     }
 
     public void getNextQuestion(Model model) {
-            if (questions != null && currentQuestionIndex < 10) {
-                int randomIndex = (int)(Math.random() * questions.size());
-                Collections.shuffle(questions.get(randomIndex).getChoices());
-                model.addAttribute("nextQuestion", questions.get(randomIndex));
-            }
-        }
-
+    if (questions != null && currentQuestionIndex < 10) {
+        int randomIndex = (int)(Math.random() * questions.size());
+        model.addAttribute("nextQuestion", questions.get(randomIndex));
     }
-
+}
+}
