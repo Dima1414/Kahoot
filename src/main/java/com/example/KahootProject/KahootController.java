@@ -15,6 +15,7 @@ public class KahootController {
 
     private int scoreCount = 0;
     private int maxScore = 0;
+    private int finalScore;
 
     private int currentQuestionIndex = 0;
     private Game game;
@@ -27,6 +28,7 @@ public class KahootController {
 
     @PostMapping("/start")
     public String startQuiz(Model model) {
+        finalScore = 0;
         scoreCount = 0;
         currentQuestionIndex = 0;
         game = new Game();
@@ -42,6 +44,7 @@ public class KahootController {
     public String answer(@RequestParam String answerString, @RequestParam String trueAnswer, Model model) {
         if (trueAnswer.equals(answerString)) {
             scoreCount++;
+            finalScore++;
             if (scoreCount > maxScore) {
                 maxScore = scoreCount;
             }
@@ -56,7 +59,7 @@ public class KahootController {
         currentQuestionIndex++;
 
         if (currentQuestionIndex >= 10) {
-            model.addAttribute("finalScore", scoreCount);
+            model.addAttribute("finalScore", finalScore);
             model.addAttribute("maxScore", maxScore);
             return "gameOverPage";
         }
