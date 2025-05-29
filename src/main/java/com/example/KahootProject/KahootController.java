@@ -36,6 +36,7 @@ public class KahootController {
         Collections.shuffle(questions);
         getNextQuestion(model);
         model.addAttribute("score", scoreCount);
+        model.addAttribute("finalScore", finalScore);
         model.addAttribute("maxScore", maxScore);
         return "kahootQuestion";
     }
@@ -66,6 +67,7 @@ public class KahootController {
 
         model.addAttribute("score", scoreCount);
         model.addAttribute("maxScore", maxScore);
+        model.addAttribute("finalScore", finalScore);
         getNextQuestion(model);
         return "kahootQuestion";
     }

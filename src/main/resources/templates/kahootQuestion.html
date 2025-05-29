@@ -47,8 +47,8 @@
         <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.correctAnswer}" /></p>
     </form>
 
-    <h1 class="score-text" th:text="'Score: ' + ${score}"></h1>
-    <h1 class="max-score-text" th:text="'Max Score: ' + ${maxScore}"></h1>
+    <h1 class="score-text" th:text="'Score: ' + ${finalScore}"></h1>
+    <h1 class="max-score-text" th:text="'Max Streak: ' + ${maxScore}"></h1>
     <!--    <h1 th:text="${nextQuestion.correctAnswer}"></h1>-->
 
 <!--    <table class="table">-->
