@@ -45,6 +45,19 @@ public class Game {
         ArrayList<Choice> aveThreesList = allAvgThreePoints.getThrees();
         Collections.shuffle(aveThreesList);
         questionSet.add(new Question(q, aveThreesList));
+
+        DataBaseAvgSTPG allAvgSTPG = new DataBaseAvgSTPG();
+        q = "Who has the greatest average steals per game?";
+        ArrayList<Choice> avgSTPGList = allAvgSTPG.getSTPGList();
+        Collections.shuffle(avgSTPGList);
+        questionSet.add(new Question(q, avgSTPGList));
+
+        DataBaseAvgBLKPG allAvgBLKPG = new DataBaseAvgBLKPG();
+        q = "Who has the greatest average blocks per game?";
+        ArrayList<Choice> avgBlocksList = allAvgBLKPG.getAvgBLKPG();
+        Collections.shuffle(avgBlocksList);
+        questionSet.add(new Question(q, avgBlocksList));
+
         Collections.shuffle(questionSet);
     }
     public ArrayList<Question> getQuestionSet() {
