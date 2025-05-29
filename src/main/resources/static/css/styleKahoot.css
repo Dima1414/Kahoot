@@ -78,7 +78,7 @@
 }
 
 .score-text {
-    color: white;  /* changes all <p> text to blue */
+    color: white;
     font-style: oblique;
     position: absolute;
     top: 740px;
@@ -86,11 +86,19 @@
 }
 
 .max-score-text {
-    color: white;  /* changes all <p> text to blue */
+    color: white;
     font-style: oblique;
     position: absolute;
     top: 740px;
     right: 10px;
+}
+
+.check-indication {
+    font-style: oblique;
+    position: absolute;
+    top: 740px;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .question {

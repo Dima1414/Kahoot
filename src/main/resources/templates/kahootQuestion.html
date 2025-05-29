@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <title>NBA KNOWLEDGE QUIZ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/styleKahoot.css?v=2}">
+    <link rel="stylesheet" th:href="@{/css/styleKahoot.css?v=4}">
 
 </head>
 <body style="background-color: #2b0c49">
 
-    <h1 class="question" th:text="${nextQuestion.question}"/>
+    <h1 class="question" th:text="${currentQuestionIndex + 1 + '. ' + nextQuestion.question}"/>
 
     <form action="#" th:action="@{/answer}" method="post">
         <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[0].name}"/></p>
         <p>
             <input type="submit"
-                   th:value="${nextQuestion.choices[0].name + ' - ' + nextQuestion.choices[0].stat}"
+                   th:value="${nextQuestion.choices[0].name}"
                    class="choice-button1" />
         </p>
         <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.correctAnswer}" /></p>
@@ -24,7 +24,7 @@
         <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[1].name}"/></p>
         <p>
             <input type="submit"
-                   th:value="${nextQuestion.choices[1].name + ' - ' + nextQuestion.choices[1].stat}"
+                   th:value="${nextQuestion.choices[1].name}"
                    class="choice-button2" />
         </p>
         <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.correctAnswer}" /></p>
@@ -33,7 +33,7 @@
         <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[2].name}"/></p>
         <p>
             <input type="submit"
-                   th:value="${nextQuestion.choices[2].name + ' - ' + nextQuestion.choices[2].stat}"
+                   th:value="${nextQuestion.choices[2].name}"
                    class="choice-button3" />
         </p>
         <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.correctAnswer}" /></p>
@@ -42,14 +42,15 @@
         <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[3].name}"/></p>
         <p>
             <input type="submit"
-                   th:value="${nextQuestion.choices[3].name + ' - ' + nextQuestion.choices[3].stat}"
+                   th:value="${nextQuestion.choices[3].name}"
                    class="choice-button4" />
         </p>
         <p><input type="hidden" name="trueAnswer" th:value="${nextQuestion.correctAnswer}" /></p>
     </form>
 
     <h1 class="score-text" th:text="'Score: ' + ${finalScore}"></h1>
-    <h1 class="max-score-text" th:text="'Max Streak: ' + ${maxScore}"></h1>
+    <h1 class="max-score-text" th:text="'Best Streak: ' + ${maxScore}"></h1>
+    <h1 th:style="${checkIndicator == 'Correct'? 'color:green':'color:red'}" class="check-indication" th:text="${checkIndicator}"></h1>
     <!--    <h1 th:text="${nextQuestion.correctAnswer}"></h1>-->
 
 <!--    <table class="table">-->
