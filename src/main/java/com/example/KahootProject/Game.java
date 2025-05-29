@@ -58,6 +58,12 @@ public class Game {
         Collections.shuffle(avgBlocksList);
         questionSet.add(new Question(q, avgBlocksList));
 
+        DataBaseAvgAPG allAvgAPG = new DataBaseAvgAPG();
+        q = "Who has the greatest average assists per game?";
+        ArrayList<Choice> avgAssistsList = allAvgAPG.getAvgAPG();
+        Collections.shuffle(avgAssistsList);
+        questionSet.add(new Question(q, avgAssistsList));
+
         Collections.shuffle(questionSet);
     }
     public ArrayList<Question> getQuestionSet() {

@@ -9,7 +9,8 @@
 </head>
 <body style="background-color: #2b0c49">
 
-    <h1 class="question" th:text="${currentQuestionIndex + 1 + '. ' + nextQuestion.question}"/>
+    <h1 class="question" th:text="${nextQuestion.question}"/>
+    <h1 style = "position:absolute; right:20px; top:5px" class="question" th:text="${currentQuestionIndex + 1 + '/' + '15'}"/>
 
     <form action="#" th:action="@{/answer}" method="post">
         <p><input type="hidden" name="answerString" th:value="${nextQuestion.choices[0].name}"/></p>
