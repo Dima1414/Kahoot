@@ -16,6 +16,10 @@ public class Question {
             this.choices.add(choices.get(i));
         }
 
+        shuffleAndUpdateCorrectAnswer();
+    }
+
+    private int getCorrectAnswerIndex() {
         double temp;
         double max = 0;
         int index = -1;
@@ -26,7 +30,12 @@ public class Question {
                 index = i;
             }
         }
-        correctAnswer = choices.get(index).getName();
+        return index;
+    }
+
+    public void shuffleAndUpdateCorrectAnswer() {
+        Collections.shuffle(this.choices);
+        correctAnswer = choices.get(getCorrectAnswerIndex()).getName();
     }
     public String getQuestion() {
         return question;
@@ -36,5 +45,9 @@ public class Question {
     }
     public String getCorrectAnswer() {
         return correctAnswer;
+    }
+
+    public void setCorrectAnswer(String correctAnswer) {
+
     }
 }
