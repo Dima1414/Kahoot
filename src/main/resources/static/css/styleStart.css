@@ -12,6 +12,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.start-button:hover {
+    background-color: #f87638;
 }
 
 .button-wrapper {

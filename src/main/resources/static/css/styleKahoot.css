@@ -10,6 +10,12 @@
     border: none;
     position: absolute;
     top: 65px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.choice-button1:hover {
+    background-color: #e14141;
 }
 
 .choice-button2 {
@@ -23,6 +29,12 @@
     border: none;
     position: absolute;
     top: 400px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.choice-button2:hover {
+    background-color: #428f2d;
 }
 
 .choice-button3 {
@@ -37,6 +49,12 @@
     position: absolute;
     top: 65px;
     left: 735px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.choice-button3:hover {
+    background-color: #34519a;
 }
 
 .choice-button4 {
@@ -51,6 +69,12 @@
     position: absolute;
     top: 400px;
     left: 735px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.choice-button4:hover {
+    background-color: #d6ad36;
 }
 
 .score-text {
