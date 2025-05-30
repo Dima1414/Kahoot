@@ -50,9 +50,5 @@ public class DataBaseSalaries {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        for(int i = 0; i < salaries.size(); i++)
-//        {
-//            System.out.println(salaries.get(i).getName());
-//        }
     }
 }
