@@ -46,8 +46,4 @@ public class Question {
     public String getCorrectAnswer() {
         return correctAnswer;
     }
-
-    public void setCorrectAnswer(String correctAnswer) {
-
-    }
 }

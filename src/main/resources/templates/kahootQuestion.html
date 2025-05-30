@@ -51,21 +51,6 @@
     <h1 class="score-text" th:text="'Score: ' + ${finalScore}"></h1>
     <h1 class="max-score-text" th:text="'Best Streak: ' + ${maxScore}"></h1>
     <h1 th:style="${checkIndicator == 'Correct'? 'color:green':'color:red'}" class="check-indication" th:text="${checkIndicator}"></h1>
-    <!--    <h1 th:text="${nextQuestion.correctAnswer}"></h1>-->
-
-<!--    <table class="table">-->
-<!--        <thead>-->
-<!--        <tr>-->
-<!--            <th scope="col">Number</th>-->
-<!--            <th scope="col">Answer</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tr th:each="choice, index: ${nextQuestion.choices}">-->
-<!--            <td th:text="${index.count}"/>-->
-<!--            <td th:text="${choice.name}"/>-->
-<!--        </tr>-->
-<!--    </table>-->
-
 </body>
 </html>
 
