@@ -48,6 +48,7 @@ public class DataBaseAvgSTPG {
                     }
 
                     try
+
                     {
                         double avgSTPGList = Double.parseDouble(avgSTPG);
                         STPGList.add(new Choice(name, avgSTPGList));
